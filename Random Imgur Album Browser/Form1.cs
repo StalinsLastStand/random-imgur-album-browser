@@ -24,13 +24,14 @@ namespace Random_Imgur_Album_Browser
         }
 
         private void btn_Next_Click(object sender, EventArgs e)
-        {
+        {           
            findRandomURL();
         }
 
 
         private async Task findRandomURL()
         {
+            btn_Next.Enabled = false;
             lbl_CurrentID.Text = "";
             lbl_CurrentID.Visible = true;
             progressBar1.Visible = true;
@@ -52,16 +53,16 @@ namespace Random_Imgur_Album_Browser
                     progressBar1.Value = 0;
                     progressBar1.Visible = false;
                     lbl_CurrentID.Text = null;
+                    btn_Next.Enabled = true;
 
                     found = true;
-
-
                }
                else
                {
                    progressBar1.Value += 1;
                }                               
             }
+
         }
 
         private async Task<string> generateRandomString()
