@@ -87,7 +87,7 @@ namespace Random_Imgur_Album_Browser
                         break;
                     case 3:
                         //Number
-                        output += rnd.Next(1, 10).ToString();
+                        output += rnd.Next(0, 10).ToString();
                         break;
                 }
             }
